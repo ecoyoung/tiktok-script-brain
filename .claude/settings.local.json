@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run:*)",
+      "Bash(npx next:*)",
+      "Bash(node:*)",
+      "Bash(pkill -f \"next dev\")",
+      "Bash(chmod +x:*)",
+      "Bash(tar --exclude='node_modules' --exclude='.next' --exclude='.venv' --exclude='test' --exclude='.npm' --exclude='Library' --exclude='__pycache__' -czf /Users/ethan/tsb.tar.gz .)",
+      "Read(//Users/ethan/**)",
+      "Bash(curl -s ifconfig.me)",
+      "Bash(curl -s ipinfo.io/ip)",
+      "Bash(git init:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}

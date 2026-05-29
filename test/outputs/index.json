@@ -1,0 +1,52 @@
+{
+  "entries": [
+    {
+      "generatedAt": "2026-05-11T04:58:26.782Z",
+      "label": "Example Product - Competitor Pipeline Test",
+      "product": "example_product",
+      "model": "deepseek-v4-pro",
+      "outputFile": "outputs/competitor_pipeline_output.md",
+      "paramsFile": "inputs/smoke_test_params.md",
+      "competitorFile": "products/example_product/competitor_processed_from_raw.md",
+      "archived": false,
+      "archiveFile": "",
+      "performanceStatus": "not_archived"
+    },
+    {
+      "generatedAt": "2026-05-11T04:49:26.354Z",
+      "label": "example_product",
+      "product": "example_product",
+      "model": "deepseek-v4-pro",
+      "outputFile": "outputs/smoke_test_table_output.md",
+      "paramsFile": "inputs/smoke_test_params.md",
+      "competitorFile": "products/example_product/competitor_processed.md",
+      "archived": false,
+      "archiveFile": "",
+      "performanceStatus": "not_archived"
+    },
+    {
+      "generatedAt": "2026-05-11T04:43:01.432Z",
+      "label": "example_product",
+      "product": "example_product",
+      "model": "deepseek-v4-pro",
+      "outputFile": "outputs/smoke_test_output.md",
+      "paramsFile": "inputs/smoke_test_params.md",
+      "competitorFile": "products/example_product/competitor_processed.md",
+      "archived": false,
+      "archiveFile": "",
+      "performanceStatus": "not_archived"
+    },
+    {
+      "generatedAt": "2026-05-11T04:39:28.045Z",
+      "label": "Example Product - 30s Native Hooks",
+      "product": "example_product",
+      "model": "deepseek-v4-pro",
+      "outputFile": "outputs/example_product_single_task.md",
+      "paramsFile": "inputs/script_parameters_template.md",
+      "competitorFile": "products/example_product/competitor_processed.md",
+      "archived": true,
+      "archiveFile": "archives/high_performers/packages/2026-05-11_example_product_example_product_30s_native_hooks.md",
+      "performanceStatus": "pending_manual_update"
+    }
+  ]
+}

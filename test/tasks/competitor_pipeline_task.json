@@ -1,0 +1,10 @@
+{
+  "label": "Example Product - Competitor Pipeline Test",
+  "product": "example_product",
+  "params": "inputs/smoke_test_params.md",
+  "competitor": "products/example_product/competitor_processed_from_raw.md",
+  "output": "outputs/competitor_pipeline_output.md",
+  "archive": false,
+  "archiveNotes": "",
+  "archiveTags": ["competitor_pipeline", "smoke_test"]
+}

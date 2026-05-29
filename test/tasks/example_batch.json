@@ -1,0 +1,20 @@
+{
+  "tasks": [
+    {
+      "label": "Example Product - Baseline",
+      "product": "example_product",
+      "params": "inputs/script_parameters_template.md",
+      "competitor": "products/example_product/competitor_processed.md",
+      "output": "outputs/example_product_baseline.md",
+      "archive": true,
+      "archiveNotes": "Use this if the team decides the baseline version should be part of the archive.",
+      "archiveTags": ["baseline", "batch_run"]
+    },
+    {
+      "label": "Example Product - No Competitor Input",
+      "product": "example_product",
+      "params": "inputs/script_parameters_template.md",
+      "output": "outputs/example_product_no_competitor.md"
+    }
+  ]
+}

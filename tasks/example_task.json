@@ -1,0 +1,10 @@
+{
+  "label": "Example Product - 30s Native Hooks",
+  "product": "example_product",
+  "params": "inputs/script_parameters_template.md",
+  "competitor": "products/example_product/competitor_processed.md",
+  "output": "outputs/example_product_single_task.md",
+  "archive": true,
+  "archiveNotes": "Strong baseline example for native-sounding US closet organization hooks.",
+  "archiveTags": ["baseline", "home_org", "native_hook"]
+}

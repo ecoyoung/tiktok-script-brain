@@ -1,0 +1,56 @@
+{
+  "entries": [
+    {
+      "archiveSlug": "2026-05-11_example_product_example_product_30s_native_hooks",
+      "archivedAt": "2026-05-11T04:39:28.045Z",
+      "label": "Example Product - 30s Native Hooks",
+      "product": "example_product",
+      "model": "deepseek-v4-pro",
+      "outputFile": "outputs/example_product_single_task.md",
+      "archiveFile": "archives/high_performers/packages/2026-05-11_example_product_example_product_30s_native_hooks.md",
+      "metadataFile": "archives/high_performers/metadata/2026-05-11_example_product_example_product_30s_native_hooks.json",
+      "archiveNotes": "Strong baseline example for native-sounding US closet organization hooks.",
+      "archiveTags": [
+        "baseline",
+        "home_org",
+        "native_hook"
+      ],
+      "performance": {
+        "status": "pending_manual_update",
+        "views": "",
+        "holdRate3s": "",
+        "completionRate": "",
+        "ctr": "",
+        "cvr": "",
+        "commentSignals": "",
+        "creativeTakeaway": ""
+      }
+    },
+    {
+      "archiveSlug": "2026-05-11_example_product_example_product_30s_native_hooks",
+      "archivedAt": "2026-05-11T04:38:52.627Z",
+      "label": "Example Product - 30s Native Hooks",
+      "product": "example_product",
+      "model": "deepseek-v4-pro",
+      "outputFile": "outputs/example_product_single_task.md",
+      "archiveFile": "archives/high_performers/packages/2026-05-11_example_product_example_product_30s_native_hooks.md",
+      "metadataFile": "archives/high_performers/metadata/2026-05-11_example_product_example_product_30s_native_hooks.json",
+      "archiveNotes": "Strong baseline example for native-sounding US closet organization hooks.",
+      "archiveTags": [
+        "baseline",
+        "home_org",
+        "native_hook"
+      ],
+      "performance": {
+        "status": "pending_manual_update",
+        "views": "",
+        "holdRate3s": "",
+        "completionRate": "",
+        "ctr": "",
+        "cvr": "",
+        "commentSignals": "",
+        "creativeTakeaway": ""
+      }
+    }
+  ]
+}

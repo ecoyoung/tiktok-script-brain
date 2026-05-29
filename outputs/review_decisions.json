@@ -1,0 +1,30 @@
+{
+  "decisions": {
+    "outputs/2026-05-28_berberine_scripts.md": {
+      "priority": "高",
+      "status": "待处理",
+      "scripts": {
+        "1": {
+          "status": "建议拍摄",
+          "performance": {
+            "status": "pending_manual_update",
+            "views": "231231",
+            "holdRate3s": "25%",
+            "completionRate": "13%",
+            "ctr": "15%",
+            "cvr": "7%",
+            "commentSignals": "",
+            "creativeTakeaway": "",
+            "updatedAt": "2026-05-28T10:21:30.524Z"
+          }
+        },
+        "2": {
+          "status": "建议拍摄"
+        },
+        "3": {
+          "status": "淘汰"
+        }
+      }
+    }
+  }
+}

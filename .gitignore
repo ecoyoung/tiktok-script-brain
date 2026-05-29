@@ -1,0 +1,9 @@
+node_modules/
+.next/
+.next_tmp/
+.venv/
+.npm/
+Library/
+__pycache__/
+.env
+*.tar.gz

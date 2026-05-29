@@ -1,0 +1,26 @@
+{
+  "archiveSlug": "2026-05-11_example_product_example_product_30s_native_hooks",
+  "archivedAt": "2026-05-11T04:39:28.045Z",
+  "product": "example_product",
+  "label": "Example Product - 30s Native Hooks",
+  "model": "deepseek-v4-pro",
+  "outputFile": "outputs/example_product_single_task.md",
+  "paramsFile": "inputs/script_parameters_template.md",
+  "competitorFile": "products/example_product/competitor_processed.md",
+  "archiveNotes": "Strong baseline example for native-sounding US closet organization hooks.",
+  "archiveTags": [
+    "baseline",
+    "home_org",
+    "native_hook"
+  ],
+  "performance": {
+    "status": "pending_manual_update",
+    "views": "",
+    "holdRate3s": "",
+    "completionRate": "",
+    "ctr": "",
+    "cvr": "",
+    "commentSignals": "",
+    "creativeTakeaway": ""
+  }
+}

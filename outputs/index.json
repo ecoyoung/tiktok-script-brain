@@ -1,0 +1,28 @@
+{
+  "entries": [
+    {
+      "generatedAt": "2026-05-28T10:00:12.493Z",
+      "label": "berberine",
+      "product": "berberine",
+      "model": "deepseek-v4-pro",
+      "outputFile": "outputs/2026-05-28_berberine_scripts.md",
+      "paramsFile": "products/berberine/web_script_parameters.md",
+      "competitorFile": "products/berberine/competitor_processed.md",
+      "archived": false,
+      "archiveFile": "",
+      "performanceStatus": "not_archived"
+    },
+    {
+      "generatedAt": "2026-05-28T08:13:07.673Z",
+      "label": "example_product",
+      "product": "example_product",
+      "model": "deepseek-v4-pro",
+      "outputFile": "outputs/2026-05-28_example_product_scripts.md",
+      "paramsFile": "products/example_product/web_script_parameters.md",
+      "competitorFile": "products/example_product/competitor_processed.md",
+      "archived": false,
+      "archiveFile": "",
+      "performanceStatus": "not_archived"
+    }
+  ]
+}
