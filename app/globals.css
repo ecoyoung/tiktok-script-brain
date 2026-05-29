@@ -587,6 +587,35 @@ textarea {
   cursor: not-allowed;
 }
 
+.secondary.danger {
+  color: #b42318;
+  border-color: #fecdca;
+  background: #fff5f5;
+}
+
+.secondary.danger:hover {
+  background: #fee4e2;
+  border-color: #fda29b;
+}
+
+.secondary.compact {
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+}
+
+.nested-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.nested-card-header h4 {
+  margin: 0;
+}
+
 .inline-create,
 .inline-options {
   display: flex;

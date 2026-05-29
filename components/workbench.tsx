@@ -707,6 +707,42 @@ export function Workbench() {
     }
   }
 
+  async function deleteCompetitorCard(index: number) {
+    if (!workspace) {
+      return;
+    }
+    const card = workspace.competitor.cards[index];
+    if (!card) {
+      return;
+    }
+    const label = `脚本 ${index + 1} 分析卡`;
+    const confirmed = window.confirm(`确定删除「${label}」？\n\n删除后会更新 competitor_processed.md，生成任务将只引用剩余分析卡。`);
+    if (!confirmed) {
+      return;
+    }
+
+    const competitor = {
+      ...workspace.competitor,
+      cards: workspace.competitor.cards.filter((_, cardIndex) => cardIndex !== index),
+    };
+
+    setBusy("delete-competitor-card");
+    setError("");
+    setNotice("");
+    try {
+      const data = await request<{ workspace: ProductWorkspace }>(`/api/products/${workspace.slug}`, {
+        method: "PUT",
+        body: JSON.stringify({ competitor }),
+      });
+      setWorkspace(data.workspace);
+      setNotice(`已删除「${label}」。`);
+    } catch (reason) {
+      setError(reason instanceof Error ? reason.message : "删除分析卡失败");
+    } finally {
+      setBusy("");
+    }
+  }
+
   async function extractAudienceAction() {
     if (!selectedProduct || !audienceRawMaterial.trim()) {
       setError("请先粘贴用户原始素材。");
@@ -1025,7 +1061,7 @@ export function Workbench() {
           <div className="brand-mark">TS</div>
           <div>
             <strong>TikTok Script Brain</strong>
-            <span>Next.js 内容工作台</span>
+            <span>脚本内容工作台</span>
           </div>
         </div>
         <nav className="sidebar-nav">
@@ -1065,7 +1101,7 @@ export function Workbench() {
           <div className="hero-copy">
             <span className="eyebrow">TikTok 内容生产控制台</span>
             <h1>TikTok Script Brain</h1>
-            <p>把产品资料、竞手洞察、脚本生成、审稿决策和复盘沉淀收进同一套 Next.js 工作台。前端已不再沿用 Streamlit，而是按内部内容团队控制台的交互节奏重做。</p>
+            <p>把产品资料、竞手洞察、脚本生成、审稿决策和复盘沉淀收进同一套中台系统中。</p>
             <div className="hero-tags">
               <span>产品资料</span>
               <span>竞手预处理</span>
@@ -1433,20 +1469,34 @@ export function Workbench() {
                   </div>
                 </div>
 
-                <div className="compare-grid">
-                  {workspace.competitor.cards.map((card, index) => (
-                    <div className="nested-card" key={`competitor-preview-${index}`}>
-                      <h4>脚本 {index + 1} 分析卡</h4>
-                      <p><b>POV 概要：</b>{card.povSummary || "-"}</p>
-                      <p><b>钩子结构：</b>{card.hookStructure || "-"}</p>
-                      <p><b>转化逻辑：</b>{card.conversionLogic || "-"}</p>
-                      <p><b>画面模式：</b>{card.visualPattern || "-"}</p>
-                      <p><b>用户触发点：</b>{card.audienceTrigger || "-"}</p>
-                      <p><b>弱点：</b>{card.weakness || "-"}</p>
-                      <p><b>差异化机会：</b>{card.gap || "-"}</p>
-                    </div>
-                  ))}
-                </div>
+                {workspace.competitor.cards.length === 0 ? (
+                  <p className="helper">暂无脚本分析卡。完成预处理后会出现；删除后剩余卡片会重新编号保存。</p>
+                ) : (
+                  <div className="compare-grid">
+                    {workspace.competitor.cards.map((card, index) => (
+                      <div className="nested-card" key={`competitor-preview-${index}`}>
+                        <div className="nested-card-header">
+                          <h4>脚本 {index + 1} 分析卡</h4>
+                          <button
+                            type="button"
+                            className="secondary danger compact"
+                            onClick={() => deleteCompetitorCard(index)}
+                            disabled={busy === "delete-competitor-card"}
+                          >
+                            删除此卡
+                          </button>
+                        </div>
+                        <p><b>POV 概要：</b>{card.povSummary || "-"}</p>
+                        <p><b>钩子结构：</b>{card.hookStructure || "-"}</p>
+                        <p><b>转化逻辑：</b>{card.conversionLogic || "-"}</p>
+                        <p><b>画面模式：</b>{card.visualPattern || "-"}</p>
+                        <p><b>用户触发点：</b>{card.audienceTrigger || "-"}</p>
+                        <p><b>弱点：</b>{card.weakness || "-"}</p>
+                        <p><b>差异化机会：</b>{card.gap || "-"}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
 
                 <div className="detail-summary-grid">
                   <div className="detail-block">

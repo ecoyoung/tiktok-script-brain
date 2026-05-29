@@ -1,3 +1,4 @@
+import { competitorCardHasContent, filterCompetitorCards } from "./competitor";
 import {
   AudienceInsight,
   CompetitorProcessed,
@@ -189,19 +190,7 @@ export function parseCompetitorProcessed(content: string): CompetitorProcessed {
         gap: differentiationOpportunity,
       },
     ];
-    cards.push(...fallbackCards);
-  }
-
-  while (cards.length < 2) {
-    cards.push({
-      povSummary: "",
-      hookStructure: "",
-      conversionLogic: "",
-      visualPattern: "",
-      audienceTrigger: "",
-      weakness: "",
-      gap: "",
-    });
+    cards.push(...fallbackCards.filter(competitorCardHasContent));
   }
 
   return {
@@ -214,7 +203,7 @@ export function parseCompetitorProcessed(content: string): CompetitorProcessed {
     source:
       matchSingle(content, /\*\*Link \/ Source（链接 \/ 来源）:\*\*\s*(.*)/) ||
       matchSingle(content, /\*\*Link \/ Source:\*\*\s*(.*)/),
-    cards: cards.slice(0, 2),
+    cards: filterCompetitorCards(cards),
     repeatedOpenings: matchSingle(content, /- Repeated opening styles（重复出现的开头方式）:\s*(.*)/),
     repeatedClaims: matchSingle(content, /- Repeated claims（重复出现的卖点表达）:\s*(.*)/),
     emotionalRedOcean: matchSingle(content, /- Emotional territory everyone is competing in（大家都在争夺的情绪区间）:\s*(.*)/),
@@ -237,17 +226,18 @@ export function renderCompetitorProcessed(data: CompetitorProcessed): string {
 - Weakness（弱点）: ${card.weakness}
 - Gap / Differentiation Opportunity（空白 / 差异化机会）: ${card.gap}`;
 
+  const cardSection =
+    data.cards.length > 0
+      ? `${data.cards.map((card, index) => renderCard(card, index)).join("\n\n")}\n\n`
+      : "";
+
   return `## COMPETITOR SCRIPTS（竞手脚本分析）
 
 **Competitor Brand / Account（竞手品牌 / 账号）:** ${data.brand}
 **Category（类目）:** ${data.category}
 **Link / Source（链接 / 来源）:** ${data.source}
 
-${renderCard(data.cards[0], 0)}
-
-${renderCard(data.cards[1], 1)}
-
-**Cross-Competitor Pattern Summary（跨竞手共性总结）**
+${cardSection}**Cross-Competitor Pattern Summary（跨竞手共性总结）**
 - Repeated opening styles（重复出现的开头方式）: ${data.repeatedOpenings}
 - Repeated claims（重复出现的卖点表达）: ${data.repeatedClaims}
 - Emotional territory everyone is competing in（大家都在争夺的情绪区间）: ${data.emotionalRedOcean}
