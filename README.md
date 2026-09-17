@@ -1,3 +1,5 @@
+**简体中文** | [English](README.en.md)
+
 # TikTok Script Brain
 
 面向团队内部协作的 TikTok 内容生产系统，默认服务于美国 TikTok 市场，统一调用 `DeepSeek v4`。
